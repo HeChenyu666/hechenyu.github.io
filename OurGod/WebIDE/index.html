@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta name="csrf-token" content="1615362568:/L3J8S4EEk/BbgYHcadvv++HCyuvO5caLVp8Y4JlVZY=">
-    <title>洛谷在线 IDE</title>
+    <title>WebIDE|Programmers' God</title>
     <link rel="stylesheet" href="//cdn.luogu.com.cn/ide/luogu-ide.css?ver=20200320-1"/>
     <style>
         html, body, .ide-wrapper {
@@ -116,7 +116,7 @@
         try {
             ws = new WebSocket('wss://ws.luogu.com.cn/ws');
         } catch (e) {
-            alert("错误", "无法连接追踪服务器，请稍后重试。");
+            alert("Error", "Failed to connect the Internet, please try again later.");
             return;
         }
         ws.onopen = function () {
@@ -143,26 +143,26 @@
         if (data.type === "compile") {
             if (!data.success) {
                 output = data.desc;
-                label = '编译失败';
+                label = 'Compiled Error';
             }
         } else if (data.type === "execute") {
             output = data.output;
             switch (data.execute.error) {
                 case null:
-                    label = '运行成功 '
+                    label = 'Runed Successfully'
                         + data.execute.real_time + 'ms ' + data.execute.memory + 'kb';
                     break;
                 case 'Runtime Error':
-                    label = '运行时错误';
+                    label = 'Runtime Error';
                     break;
                 case 'Time Limit Exceeded':
-                    label = '超过时间限制';
+                    label = 'Time Limit Exceeded';
                     break;
                 case 'Memory Limit Exceeded':
-                    label = '超出内存限制';
+                    label = 'Memory Limit Exceeded';
                     break;
                 case 'Output Limit Exceeded':
-                    label = '超出输出限制';
+                    label = 'Output Limit Exceeded';
                     break;
             }
         }
