@@ -11,7 +11,7 @@
             getCountdown();
             setInterval(function(){ getCountdown() },1000);
             function getCountdown (){
-                countdown.innerHTML = "<span>"+m+"</span> ：<span>"+s+"</span>";
+                countdown.innerHTML = "<span style="color:white"><font size=50>"+m+"</font></span> ：<span style="color:white"><font size=50>"+s+"</font></span>";
                 if( m == 0 && s == 0 ){
                     alert("Time Up!");
                     m = 9;
@@ -28,8 +28,8 @@
         }
     </script>
 </head>
-<body>
-    <h1>Counting:</h1>
+<body bgcolor=black>
+    <h1 style="color :white">Counting:</h1>
     <div id="title"></div>
 </body>
 </html>
