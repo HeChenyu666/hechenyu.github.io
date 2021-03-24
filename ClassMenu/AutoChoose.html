@@ -9,8 +9,8 @@
 
 <script>
 document.getElementById("demo").innerHTML =
-  "<h1 center class='doudong'>"+
-Math.floor(Math.random() * 32)+"</h1>";
+  "<span style="text-align:center" class='doudong'>"+
+Math.floor(Math.random() * 32)+"</span>";
 </script>
 <style>
 .name{   
@@ -32,7 +32,7 @@ Math.floor(Math.random() * 32)+"</h1>";
     100%{filter:hue-rotate(360deg)}
 }
     .doudong{
-	        font-size:250px;
+	        font-size:350px;
     animation: uk-text-shadow-glitch .65s cubic-bezier(1,-1.91,0,2.79) 0s infinite normal both running;
 	}
 @keyframes uk-text-shadow-glitch {
