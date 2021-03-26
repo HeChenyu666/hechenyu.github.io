@@ -1,10 +1,32 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>New Concept Web</title>
-  </head>
-  <body>
-    <script>
+
+
+<html lang="zh-CN">
+
+
+
+</html>
+
+<body>
+    
+      
+      <div id="subtitle-box">
+        
+        <span id="subtitle"></span>
+        
+      </div>
+      <div>
+        
+      </div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script>
+
+
+<!-- Subtitle -->
+
+  <script>
     try {
       var typed = new Typed("#subtitle", {
         strings: ['要是每个人都懂你，那你得有多平凡.', '曾以为走不出的日子，现在都回不去了.', '语言只是沉默的标点符号.'],
@@ -18,9 +40,50 @@
       console.log(err)
     }
   </script>
-  <div id="subtitle-box">
-    <span id="subtitle"></span>
-    <span class="typed-cursor">|</span>
-  </div>
-  </body>
+  
+  
+  
+
+<div class="notice" style="margin-top:50px">
+    <i class="ri-heart-fill"></i>
+    <div class="notice-content" id="broad"></div>
+</div>
+<script type="text/javascript">
+    fetch('https://v1.hitokoto.cn')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("broad").innerHTML = data.hitokoto;
+        })
+        .catch(console.error)
+</script>
+
+<style>
+    .notice {
+        padding: 20px;
+        border: 1px dashed #e6e6e6;
+        color: #969696;
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        background: #fbfbfb50;
+        border-radius: 10px;
+    }
+
+    .notice i {
+        float: left;
+        color: #999;
+        font-size: 16px;
+        padding-right: 10px;
+        vertical-align: middle;
+        margin-top: -2px;
+    }
+
+    .notice-content {
+        display: initial;
+        vertical-align: middle;
+    }
+</style>
+  
+</body>
+
 </html>
